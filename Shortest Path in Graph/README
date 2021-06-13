@@ -1,0 +1,42 @@
+NAME: ROSU ADRIANA-STEFANIA
+GROUP: 324CD
+
+5.2. SHORTEST PATH - ALL TO ALL
+	
+		I implemented the chosen solutions (in C ++) to find the shortest path
+	between any two nodes of a graph: the Floyd-Warshall algorithm, Dijkstra's 
+	algorithm and Johnson's algorithm, and to test correctness I automatically 
+	generated 10 tests of different sizes.
+
+	
+	The implementations of the algorithms have been adapted according to the 
+	following sources:
+	- the Floyd-Warshall algorithm
+	https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/;
+	- Dijkstra's algorithm 
+	https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/;
+	- Johnson's algorithm
+	https://www.geeksforgeeks.org/johnsons-algorithm-for-all-pairs-shortest-paths-implementation/.
+	
+	The archive contains the following:
+	- three files with .h extension (algo_Floyd.h, algo_Dijkstra.h, algo_Johnson.h) in
+	which are found the signatures of the functions implemented later;
+	- three .cpp files containing the implementations of the functions declared in the
+	.h files that do not contain the main function (algo_Floyd.cpp, algo_Dijkstra.cpp,
+	algo_Johnson.cpp);
+	- three .cpp files containing the main function in which the data is read
+	and the previously implemented functions are called (algo_Floyd_test.cpp,
+	algo_Dijkstra_test.cpp, algo_Johnson_test.cpp);
+	- Makefile: build, run and clean rules for each of the 3 algorithms
+	- Folder in: 
+		- contains 10 different input tests to test correctness;
+		- the files contain on the first line the number of nodes (n) and the number of
+	the edges (m), and on the next m lines the edges represented by source node, destination node 
+	and cost;
+		- the tests are represented by directed weighted graphs that have both positive 
+		weighted edges, as well as negative weighted edges;
+		- some tests have graphs that contain negative cycles to test correctness;
+		- the tests were generated using generator.cpp (adapted for negative costs from
+	https://www.geeksforgeeks.org/test-case-generation-set-4-random-directed-undirected-weighted-and-unweighted-graphs/).
+
+

@@ -1,0 +1,58 @@
+# Rosu Adriana-Stefania 324CD
+# Tema 2 Analiza Algoritmilor
+
+## Implementare
+    - Task 1:
+        Pentru acest task an redus problema K-coloring la SAT.
+        - readProblemData():
+                - cu ajutorul unui obiect de tip BufferedReader am citit date de input din
+                inFileName, construind o matrice de adiacenta a grafului dat (nodurile reprezinta
+                familiile, iar relatiile dintre acestea muchiile);
+        - formulateOracleQuestion():
+                - am calculat numarul de varaibile necesare si numarul de clauze, mai apoi
+                afisandu-le;
+                - am retinut variabile intr-o matrice, liniile reprezentand familiile, iar coloanele
+                spionii;
+                - aceasta functie stabileste clauzele astfel: o familie poate avea un singur spion
+                din cei K, iar doua familii prietene (doua noduri intre care exista muchie) nu pot
+                avea acelasi spion;
+        - decipherOracleAnswer():
+                -  in cazul in care solutia obtinuta afisa "True", am retinut variabilele pozitive
+                (ele reprezentand spionul fiecarei familii);
+                - intrucat variabilele erau notate cu numere consecutive de la 1 la N * K, am
+                prelucrat vectorul de spioni astfel incat acestia sa fie reprezentati de numere de
+                la 1 la K, pozitia acestora in vector reprezentand numarul familiei atribuite;
+        -writeAnswer():
+                - functia afiseaza in fisierul de output, outFilename, valoarea de adevar si
+                elementele vectorului de spioni;
+
+    - Task 2:
+        Pentru acest task an redus problema K-clique la SAT.
+        - readProblemData():
+                - cu ajutorul unui obiect de tip BufferedReader am citit date de input din
+                inFileName, construind o matrice de adiacenta a grafului dat (nodurile reprezinta
+                familiile, iar relatiile dintre acestea muchiile);
+        - formulateOracleQuestion():
+                 - am calculat numarul de varaibile necesare si numarul de clauze, mai apoi
+                 afisandu-le;
+                 - am retinut variabile intr-o matrice, liniile reprezentand familiile, iar coloanele
+                 pozitia lor in clica;
+                 - aceasta functie stabileste clauzele astfel: doua familii nu pot fi pe aceeasi
+                 pozitie in clica, doua familii intre care nu exista o relatie nu pot fi in aceeasi
+                 clica (in aceeasi familie extinsa), iar o familie nu se poate regasi de doua ori
+                 intr-o clica;
+        - decipherOracleAnswer():
+                 -  in cazul in care solutia obtinuta afisa "True", am retinut variabilele pozitive
+                (ele reprezentand familiile ce alcatuiesc familia extinsa);
+                 - intrucat variabilele erau notate cu numere consecutive de la 1 la N * K, am
+                 prelucrat vectorul de familii astfel incat acestea sa fie reprezentati de numere de
+                 la 1 la N;
+        -writeAnswer():
+                 - functia afiseaza in fisierul de output, outFilename, valoarea de adevar si
+                 elementele vectorului de familii;
+
+## Complexitate
+    La task 1, complexitatea functiei formulateOraclequestion este O(N * K ^ 2 + K * M).
+
+    La task 2, complexitatea functiei formulateOraclequestion este O((N ^ 2 + M) * K ^ 2).
+
